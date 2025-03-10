@@ -1,0 +1,40 @@
+.horizontal-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #020203;
+    padding: 0 20px;
+    height: 91px;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 60px;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin: 0 20px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+  }
+  
+  .nav-links a:hover {
+    color: #FF0101;
+  }
