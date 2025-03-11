@@ -2,6 +2,7 @@ import React from 'react';
 import HorizontalNav from './components/Navigation/HorizontalNav';
 import VerticalNav from './components/navigation/VerticalNav';
 import UserProfile from './components/userProfile';
+import UserActivity from './components/userActivity';
 import './styles/main.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <VerticalNav />
         <main className="content">
           <UserProfile userId={userId} />
+          <UserActivity userId={userId} />
         </main>
       </div>
     </div>

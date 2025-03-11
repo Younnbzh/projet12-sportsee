@@ -33,5 +33,4 @@ function userProfile({ userId }) {
     </div>
   );
 }
-
 export default userProfile;
