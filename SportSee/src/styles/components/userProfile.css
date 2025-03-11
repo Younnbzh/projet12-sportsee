@@ -1,0 +1,28 @@
+.user-profile {
+    color: #000;
+}
+
+.user-profile h1 {
+    padding:0;
+    margin:0 0 20px 0;
+}
+.user-name {
+    color: #FF0101;
+    font-weight: 500;
+}
+
+.congratulation-message {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.loading,
+.error {
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.error {
+    color: #FF0101;
+}
