@@ -1,6 +1,5 @@
 import userData from '../mocks/userData.json';
 import activityData from '../mocks/activity.json';
-import infosData from '../mocks/userData.json';
 import averageData from '../mocks/average-sessions.json';
 
 export const getUserData = async (userId) => {
@@ -24,13 +23,7 @@ export const getUserActivity = async (userId) => {
 };
 
 export const getUserInfos = async (userId) => {
-    return new Promise((resolve) => {
-        if (infosData.data && infosData.data.id === parseInt(userId)) {
-            resolve(infosData.data);
-        } else {
-            resolve(null);
-        }
-    });
+    return getUserData(userId);
 };
 
 export const getUserAverage = async (userId) => {
