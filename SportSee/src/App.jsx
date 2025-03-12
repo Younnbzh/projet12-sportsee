@@ -6,6 +6,7 @@ import UserActivity from './components/userActivity';
 import UserInfos from './components/userInfos';
 import UserAverage from './components/userAverage';
 import UserGoal from './components/userGoal';
+import UserActivityType from './components/userActivityType';
 
 import './styles/main.css';
 
@@ -22,6 +23,7 @@ function App() {
           <UserInfos userId={userId} />
           <UserAverage userId={userId} />
           <UserGoal userId={userId} />
+          <UserActivityType userId={userId} />
         </main>
       </div>
     </div>
