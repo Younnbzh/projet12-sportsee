@@ -4,6 +4,7 @@ import VerticalNav from './components/navigation/VerticalNav';
 import UserProfile from './components/userProfile';
 import UserActivity from './components/userActivity';
 import UserInfos from './components/userInfos';
+import UserAverage from './components/userAverage';
 import './styles/main.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <UserProfile userId={userId} />
           <UserActivity userId={userId} />
           <UserInfos userId={userId} />
+          <UserAverage userId={userId} />
         </main>
       </div>
     </div>

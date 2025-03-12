@@ -27,7 +27,7 @@ function userInfos({ userId }) {
   if (error) return <div className="error">{error}</div>;
   if (!infosData) return <div className="error">Aucune donnée disponible</div>;
   return (
-    console.log('infosData' + infosData)
+    console.log('infosData:', infosData)
   );
 }
 export default userInfos;

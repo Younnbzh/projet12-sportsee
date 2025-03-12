@@ -27,7 +27,7 @@ function userActivity({ userId }) {
   if (error) return <div className="error">{error}</div>;
   if (!activityData) return <div className="error">Aucune donnée disponible</div>;
   return (
-    console.log('activityData :' +activityData)
+    console.log('activityData:', activityData)
   );
 }
 
