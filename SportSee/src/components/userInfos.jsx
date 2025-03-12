@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { getUserActivity } from '../services/api';
-import '../styles/components/userActivity.css';
+import { getUserInfos } from '../services/api';
+import '../styles/components/userInfos.css';
 
-function userActivity({ userId }) {
-  const [activityData, setUserData] = useState(null);
+function userInfos({ userId }) {
+  const [infosData, setUserData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const data = await getUserActivity(userId);
+        const data = await getUserInfos(userId);
         if (data) {
           setUserData(data);
         } else {
@@ -25,10 +25,9 @@ function userActivity({ userId }) {
   }, [userId]);
 
   if (error) return <div className="error">{error}</div>;
-  if (!activityData) return <div className="error">Aucune donnée disponible</div>;
+  if (!infosData) return <div className="error">Aucune donnée disponible</div>;
   return (
-    console.log('activityData :' +activityData)
+    console.log('infosData' + infosData)
   );
 }
-
-export default userActivity;
+export default userInfos;
