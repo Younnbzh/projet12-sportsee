@@ -12,7 +12,7 @@ import UserKeyData from './components/userKeyData';
 import './styles/main.css';
 
 function App() {
-  const userId = 18;
+  const userId = 12;
   return (
     <div className="app">
       <HorizontalNav />

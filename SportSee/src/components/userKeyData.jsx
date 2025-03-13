@@ -13,7 +13,7 @@ function userKeyData({ userId }) {
         if (data && data.keyData) {
           setKeyData(data.keyData);
         } else {
-          setError('Données clés non trouvées');
+          setError('Utilisateur non trouvé');
         }
       } 
       catch (err) {

@@ -1,0 +1,61 @@
+.activity-chart {
+    background-color: #FBFBFB;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    margin-bottom: 30px;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.chart-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #20253A;
+    margin: 0;
+}
+
+.legend-container {
+    display: flex;
+    gap: 32px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #74798C;
+    font-size: 14px;
+}
+
+.legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.legend-dot.black {
+    background-color: #282D30;
+}
+
+.legend-dot.red {
+    background-color: #E60000;
+}
+
+.custom-tooltip {
+    background-color: #E60000;
+    color: white;
+    padding: 10px;
+    font-size: 10px;
+    text-align: center;
+    border: none;
+}
+
+.custom-tooltip p {
+    margin: 5px 0;
+}
