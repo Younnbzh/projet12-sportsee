@@ -1,7 +1,7 @@
-import userData from '../mocks/2/userData.json';
-import activityData from '../mocks/2/activity.json';
-import averageData from '../mocks/2/average-sessions.json';
-import performanceData from '../mocks/2/performance.json';
+import userData from '../mocks/userData.json';
+import activityData from '../mocks/activity.json';
+import averageData from '../mocks/average-sessions.json';
+import performanceData from '../mocks/performance.json';
 
 export const getUserData = async (userId) => {
     return new Promise((resolve) => {

@@ -12,7 +12,7 @@ import UserKeyData from './components/userKeyData';
 import './styles/main.css';
 
 function App() {
-  const userId = 12;
+  const userId = 18;
   return (
     <div className="app">
       <HorizontalNav />
@@ -23,8 +23,8 @@ function App() {
           <UserActivity userId={userId} />
           <UserInfos userId={userId} />
           <UserAverage userId={userId} />
-          <UserGoal userId={userId} />
           <UserActivityType userId={userId} />
+          <UserGoal userId={userId} />
           <UserKeyData userId={userId} />
         </main>
       </div>
