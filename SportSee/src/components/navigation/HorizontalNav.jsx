@@ -1,6 +1,9 @@
 import React from 'react';
 import '/src/styles/components/navigation/HorizontalNav.css';
-
+/**
+ * Composant HorizontalNav
+ * Barre de navigation horizontale
+ */
 function HorizontalNav() {
   return (
     <nav className="horizontal-nav">

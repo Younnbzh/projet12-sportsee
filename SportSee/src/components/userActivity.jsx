@@ -2,16 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { getUserActivity } from '../services/api';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import '../styles/components/userActivity.css';
-
+/**
+* Composant userActivity
+* Affiche un graphique à barres représentant l'activité quotidienne de l'utilisateur avec le poids en kilogrammes et les calories brûlées.
+*/
 function userActivity({ userId }) {
   const [activityData, setActivityData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    // Fonction asynchrone pour récupérer les données 
     const fetchUserData = async () => {
       try {
+        // Appel à l'API pour récupérer les données
         const data = await getUserActivity(userId);
         if (data) {
+          // Formatage des données pour le graphique
           const formattedData = data.sessions.map((session, index) => ({
             day: index + 1,
             kilogram: session.kilogram,
@@ -30,7 +36,7 @@ function userActivity({ userId }) {
     fetchUserData();
   }, [userId]);
 
-  // tooltip
+  // personnalisation de l'infobulle au survol des barres
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -60,12 +66,14 @@ function userActivity({ userId }) {
           </div>
         </div>
       </div>
+      {/* Affichage du graphique, axe X = jours / axe Y gauche (masqué) calories / axe Y droit poids */}
       <ResponsiveContainer width="100%" height={300}>
         <BarChart
           data={activityData}
           margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
           barGap={8}
         >
+          {/* Grille de fond avec lignes horizontales */}
           <CartesianGrid strokeDasharray="3 3" vertical={false} horizontalPoints={[20, 140]} />
           <XAxis
             dataKey="day"

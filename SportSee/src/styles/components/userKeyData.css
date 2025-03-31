@@ -1,0 +1,74 @@
+.key-data-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .key-data-card {
+    background-color: #FBFBFB;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    height: 124px;
+  }
+  
+  .key-data-icon-container {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 24px;
+  }
+  
+  .calorie-bg {
+    background-color: rgba(255, 0, 0, 0.07);
+  }
+  
+  .protein-bg {
+    background-color: rgba(74, 184, 255, 0.07);
+  }
+  
+  .carb-bg {
+    background-color: rgba(249, 206, 35, 0.07);
+  }
+  
+  .fat-bg {
+    background-color: rgba(253, 81, 129, 0.07);
+  }
+  
+  .key-data-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .key-data-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .key-data-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #282D30;
+    margin: 0 0 5px 0;
+  }
+  
+  .key-data-label {
+    font-size: 14px;
+    color: #74798C;
+    margin: 0;
+  }
+  
+  .loading, .error {
+    text-align: center;
+    padding: 20px;
+    color: #74798C;
+  }
+  
+  .error {
+    color: #FF0101;
+  }
