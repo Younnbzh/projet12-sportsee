@@ -1,17 +1,21 @@
 import React from 'react';
+import { useParams, Navigate } from 'react-router-dom';
 import HorizontalNav from './components/Navigation/HorizontalNav';
 import VerticalNav from './components/navigation/VerticalNav';
-import UserProfile from './components/userProfile';
-import UserActivity from './components/userActivity';
-import UserAverage from './components/userAverage';
-import UserGoal from './components/userGoal';
-import UserActivityType from './components/userActivityType';
-import UserKeyData from './components/userKeyData';
+import UserProfile from './components/UserProfile';
+import UserActivity from './components/UserActivity';
+import UserAverage from './components/UserAverage';
+import UserGoal from './components/UserGoal';
+import UserActivityType from './components/UserActivityType';
+import UserKeyData from './components/UserKeyData';
 
 import './styles/main.css';
 
 function App() {
-  const userId = 18;
+  // Récupére id user dans l'url
+  const { id } = useParams();
+  // par défaut si aucun trouvé
+  const userId = id || 12;
   return (
 <div className="app">
       <HorizontalNav />

@@ -6,7 +6,7 @@ import '../styles/components/userActivity.css';
 * Composant userActivity
 * Affiche un graphique à barres représentant l'activité quotidienne de l'utilisateur avec le poids en kilogrammes et les calories brûlées.
 */
-function userActivity({ userId }) {
+function UserActivity({ userId }) {
   const [activityData, setActivityData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -119,4 +119,4 @@ function userActivity({ userId }) {
   );
 }
 
-export default userActivity;
+export default UserActivity;

@@ -5,11 +5,33 @@ import calorieIcon from '/energy.svg';
 import proteinIcon from '/chicken.svg';
 import carbIcon from '/apple.svg';
 import fatIcon from '/cheeseburger.svg';
+
+/**
+ * Composant NutritionCard 
+ * Affiche une carte d'information nutritionnelle
+ */
+function NutritionCard({ icon, bgClass, value, unit, label, formatValue }) {
+  // Si une fonction de formatage est fournie, l'utiliser, sinon afficher la valeur telle quelle
+  const displayValue = formatValue ? formatValue(value) : value;
+  
+  return (
+    <div className="key-data-card">
+      <div className={`key-data-icon-container ${bgClass}`}>
+        <img src={icon} alt={label} className="key-data-icon" />
+      </div>
+      <div className="key-data-info">
+        <p className="key-data-value">{displayValue}{unit}</p>
+        <p className="key-data-label">{label}</p>
+      </div>
+    </div>
+  );
+}
+
 /**
 * Composant userKeyData
 * Affiche les données nutritionnelles (calories, protéines, glucides, lipides)
 */
-function userKeyData({ userId }) {
+function UserKeyData({ userId }) {
   const [keyData, setKeyData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -41,50 +63,53 @@ function userKeyData({ userId }) {
   if (error) return <div className="error">{error}</div>;
   if (!keyData) return <div className="error">Aucune donnée disponible</div>;
 
+  // Définition des cartes 
+  const nutritionCards = [
+    {
+      icon: calorieIcon,
+      bgClass: 'calorie-bg',
+      value: keyData.calorieCount,
+      unit: 'kCal',
+      label: 'Calories',
+      formatValue: formatCalories
+    },
+    {
+      icon: proteinIcon,
+      bgClass: 'protein-bg',
+      value: keyData.proteinCount,
+      unit: 'g',
+      label: 'Protéines'
+    },
+    {
+      icon: carbIcon,
+      bgClass: 'carb-bg',
+      value: keyData.carbohydrateCount,
+      unit: 'g',
+      label: 'Glucides'
+    },
+    {
+      icon: fatIcon,
+      bgClass: 'fat-bg',
+      value: keyData.lipidCount,
+      unit: 'g',
+      label: 'Lipides'
+    }
+  ];
+
   return (
     <div className="key-data-container">
-      {/* calories */}
-      <div className="key-data-card">
-        <div className="key-data-icon-container calorie-bg">
-          <img src={calorieIcon} alt="Calories" className="key-data-icon" />
-        </div>
-        <div className="key-data-info">
-          <p className="key-data-value">{formatCalories(keyData.calorieCount)}kCal</p>
-          <p className="key-data-label">Calories</p>
-        </div>
-      </div>
-      {/* protéines */}
-      <div className="key-data-card">
-        <div className="key-data-icon-container protein-bg">
-          <img src={proteinIcon} alt="Protéines" className="key-data-icon" />
-        </div>
-        <div className="key-data-info">
-          <p className="key-data-value">{keyData.proteinCount}g</p>
-          <p className="key-data-label">Protéines</p>
-        </div>
-      </div>
-      {/* glucides */}
-      <div className="key-data-card">
-        <div className="key-data-icon-container carb-bg">
-          <img src={carbIcon} alt="Glucides" className="key-data-icon" />
-        </div>
-        <div className="key-data-info">
-          <p className="key-data-value">{keyData.carbohydrateCount}g</p>
-          <p className="key-data-label">Glucides</p>
-        </div>
-      </div>
-      {/* lipides */}
-      <div className="key-data-card">
-        <div className="key-data-icon-container fat-bg">
-          <img src={fatIcon} alt="Lipides" className="key-data-icon" />
-        </div>
-        <div className="key-data-info">
-          <p className="key-data-value">{keyData.lipidCount}g</p>
-          <p className="key-data-label">Lipides</p>
-        </div>
-      </div>
+      {nutritionCards.map((card, index) => (
+        <NutritionCard
+          key={index}
+          icon={card.icon}
+          bgClass={card.bgClass}
+          value={card.value}
+          unit={card.unit}
+          label={card.label}
+          formatValue={card.formatValue}
+        />
+      ))}
     </div>
   );
 }
-
-export default userKeyData;
+export default UserKeyData;

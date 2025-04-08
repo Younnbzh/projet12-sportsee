@@ -6,7 +6,7 @@ import '../styles/components/userGoal.css';
 * Composant userGoal
 * Affiche un graphique circulaire représentant le pourcentage d'objectif atteint par l'utilisateur.
 */
-function userGoal({ userId }) {
+function UserGoal({ userId }) {
   const [goalData, setGoalData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -86,4 +86,4 @@ function userGoal({ userId }) {
   );
 }
 
-export default userGoal;
+export default UserGoal;

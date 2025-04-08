@@ -6,7 +6,7 @@ import '../styles/components/userActivityType.css';
 * Composant userActivityType
 * Affiche un graphique radar présentant les différents types d'activités de l'utilisateur.
 */
-function userActivityType({ userId }) {
+function UserActivityType({ userId }) {
   const [activityTypeData, setActivityTypeData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -103,4 +103,4 @@ function userActivityType({ userId }) {
   );
 }
 
-export default userActivityType;
+export default UserActivityType;

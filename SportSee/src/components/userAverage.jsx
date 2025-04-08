@@ -6,7 +6,7 @@ import '../styles/components/userAverage.css';
 * Composant userAverage
 * Affiche un graphique représentant la durée moyenne des sessions d'entraînement
 */
-function userAverage({ userId }) {
+function UserAverage({ userId }) {
   const [averageData, setAverageData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -116,4 +116,4 @@ function userAverage({ userId }) {
   );
 }
 
-export default userAverage;
+export default UserAverage;

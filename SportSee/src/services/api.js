@@ -1,10 +1,14 @@
-import userData from '../mocks/userData.json';
-import activityData from '../mocks/activity.json';
-import averageData from '../mocks/average-sessions.json';
-import performanceData from '../mocks/performance.json';
+import userData from '../mocks/2/userData.json';
+import activityData from '../mocks/2/activity.json';
+import averageData from '../mocks/2/average-sessions.json';
+import performanceData from '../mocks/2/performance.json';
 /**
 * Service API pour récupérer les données utilisateur
 */
+// Base URL de l'API
+const API_BASE_URL = 'http://localhost:3000';
+// Flag pour basculer entre mock et API réelle - mettre à true pour utiliser les données mockées
+const USE_MOCKED_DATA = false; 
 
 /* getUserData : Données générales utilisateur
 {
@@ -26,14 +30,29 @@ import performanceData from '../mocks/performance.json';
 }
 */
 export const getUserData = async (userId) => {
-    return new Promise((resolve) => {
-        if (userData.data && userData.data.id === parseInt(userId)) {
-            resolve(userData.data);
-        } else {
-            resolve(null);
+    if (USE_MOCKED_DATA) {
+        return new Promise((resolve) => {
+            if (userData.data && userData.data.id === parseInt(userId)) {
+                resolve(userData.data);
+            } else {
+                resolve(null);
+            }
+        });
+    } else {
+        try {
+            const response = await fetch(`${API_BASE_URL}/user/${userId}`);
+            if (!response.ok) {
+                throw new Error(`Erreur lors de la récupération des données: ${response.status}`);
+            }
+            const data = await response.json();
+            return data.data;
+        } catch (error) {
+            console.error("Erreur lors de la récupération des données:", error);
+            return null;
         }
-    });
+    }
 };
+
 /* getUserActivity : Données activité utilisateur
 {
    "data":{
@@ -55,13 +74,27 @@ export const getUserData = async (userId) => {
 }
 */
 export const getUserActivity = async (userId) => {
-    return new Promise((resolve) => {
-        if (activityData.data && activityData.data.userId === parseInt(userId)) {
-            resolve(activityData.data);
-        } else {
-            resolve(null);
+    if (USE_MOCKED_DATA) {
+        return new Promise((resolve) => {
+            if (activityData.data && activityData.data.userId === parseInt(userId)) {
+                resolve(activityData.data);
+            } else {
+                resolve(null);
+            }
+        });
+    } else {
+        try {
+            const response = await fetch(`${API_BASE_URL}/user/${userId}/activity`);
+            if (!response.ok) {
+                throw new Error(`Erreur lors de la récupération des données: ${response.status}`);
+            }
+            const data = await response.json();
+            return data.data;
+        } catch (error) {
+            console.error("Erreur lors de la récupération des données:", error);
+            return null;
         }
-    });
+    }
 };
 /* getUserAverage : Durée des sessions sur une semaine
 {
@@ -81,13 +114,27 @@ export const getUserActivity = async (userId) => {
 }
 */
 export const getUserAverage = async (userId) => {
-    return new Promise((resolve) => {
-        if (averageData.data && averageData.data.userId === parseInt(userId)) {
-            resolve(averageData.data);
-        } else {
-            resolve(null);
+    if (USE_MOCKED_DATA) {
+        return new Promise((resolve) => {
+            if (averageData.data && averageData.data.userId === parseInt(userId)) {
+                resolve(averageData.data);
+            } else {
+                resolve(null);
+            }
+        });
+    } else {
+        try {
+            const response = await fetch(`${API_BASE_URL}/user/${userId}/average-sessions`);
+            if (!response.ok) {
+                throw new Error(`Erreur lors de la récupération des données: ${response.status}`);
+            }
+            const data = await response.json();
+            return data.data;
+        } catch (error) {
+            console.error("Erreur lors de la récupération des données:", error);
+            return null;
         }
-    });
+    }
 };
 /* getUserActivityType : performance par type de statistique
 {
@@ -116,11 +163,25 @@ export const getUserAverage = async (userId) => {
 }
 */
 export const getUserActivityType = async (userId) => {
-    return new Promise((resolve) => {
-        if (performanceData.data && performanceData.data.userId === parseInt(userId)) {
-            resolve(performanceData.data);
-        } else {
-            resolve(null);
+    if (USE_MOCKED_DATA) {
+        return new Promise((resolve) => {
+            if (performanceData.data && performanceData.data.userId === parseInt(userId)) {
+                resolve(performanceData.data);
+            } else {
+                resolve(null);
+            }
+        });
+    } else {
+        try {
+            const response = await fetch(`${API_BASE_URL}/user/${userId}/performance`);
+            if (!response.ok) {
+                throw new Error(`Erreur lors de la récupération des données: ${response.status}`);
+            }
+            const data = await response.json();
+            return data.data;
+        } catch (error) {
+            console.error("Erreur lors de la récupération des données:", error);
+            return null;
         }
-    });
+    }
 };

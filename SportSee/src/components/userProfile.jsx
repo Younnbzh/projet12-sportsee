@@ -5,7 +5,7 @@ import '../styles/components/userProfile.css';
 * Composant userProfile
 * Affiche un message de félicitations pour l'utilisateur avec son prenom
 */
-function userProfile({ userId }) {
+function UserProfile({ userId }) {
   const [userData, setUserData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -38,4 +38,4 @@ function userProfile({ userId }) {
     </div>
   );
 }
-export default userProfile;
+export default UserProfile;
