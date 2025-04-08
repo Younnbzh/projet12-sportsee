@@ -1,6 +1,6 @@
 # SportSee
 
-![Logo SportSee](/public/logo.svg)
+![Logo SportSee](SportSee/public/logo.svg)
 
 ## Description
 SportSee est une application pour le coaching sportif. Elle permet de visualiser ses statistiques à travers différents graphiques.
