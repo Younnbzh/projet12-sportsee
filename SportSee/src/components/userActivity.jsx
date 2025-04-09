@@ -67,7 +67,7 @@ function UserActivity({ userId }) {
         </div>
       </div>
       {/* Affichage du graphique, axe X = jours / axe Y gauche (masqué) calories / axe Y droit poids */}
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={activityData}
           margin={{ top: 20, right: 30, left: 20, bottom: 5 }}

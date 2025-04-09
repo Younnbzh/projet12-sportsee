@@ -32,7 +32,7 @@ body {
 
 .content {
   margin-left: 117px;
-  padding: 60px 20px 20px 80px;
+  padding: 5vh 7vw 5vh 7vw;
   flex: 1;
 }
 
@@ -53,6 +53,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width: 60vw;
 }
 
 .activity-container {

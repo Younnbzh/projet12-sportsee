@@ -6,13 +6,16 @@
     margin-bottom: 30px;
     position: relative;
     color: white;
-    width: 258px;
-    height: 263px;
+    width: 18vw;
+    height: 18vw;
+    max-width:260px;
+    max-height:260px;
     overflow: hidden;
   }
   .average-chart .recharts-responsive-container {
     width: calc(100% + 40px)!important;
-    height: 263px;
+    height: 18vw;
+    max-height:260px;
     min-width: 0px;
     margin-left: -20px;
   }
@@ -24,8 +27,8 @@
     font-weight: 500;
     opacity: 0.5;
     position: absolute;
-    top: 30px;
-    left: 30px;
+    top: 6%;
+    left: 10%;
     right: 40px;
     margin: 0;
   }

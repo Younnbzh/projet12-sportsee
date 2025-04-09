@@ -8,10 +8,11 @@
     background-color: #FBFBFB;
     border-radius: 5px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
-    padding: 32px;
+    padding: 0px;
     display: flex;
     align-items: center;
-    height: 124px;
+    height: 13vh;
+    margin: 0 auto;
   }
   
   .key-data-icon-container {
